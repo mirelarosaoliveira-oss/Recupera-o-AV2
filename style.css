@@ -1,0 +1,120 @@
+:root {
+    --barbie-pink: #ff69b4;
+    --dark-pink: #e0218a;
+    --light-pink: #fce4ec;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header & Nav */
+header {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--barbie-pink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--barbie-pink);
+    text-shadow: 2px 2px #ffc1e3;
+}
+
+.search-bar input {
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid var(--barbie-pink);
+    margin-top: 15px;
+    outline: none;
+}
+
+/* Grid de Receitas */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.recipe-card:hover { transform: translateY(-10px); }
+
+.recipe-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid var(--barbie-pink);
+}
+
+.recipe-info { padding: 15px; }
+.recipe-info h3 { color: var(--dark-pink); margin-bottom: 10px; }
+
+/* Detalhes da Receita */
+.recipe-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.back-btn {
+    background: var(--barbie-pink);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Interações */
+.heart-btn {
+    font-size: 1.5rem;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.heart-btn.liked { color: var(--barbie-pink); }
+
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fly 1s linear forwards;
+}
+
+@keyframes fly {
+    to { transform: translateY(-50px) scale(0); opacity: 0; }
+}
